@@ -11,7 +11,7 @@ services:
   depends_on:
    - catalogue
    - user
-   - mangodb
+   - mongodb
    - cart
  user:
   image: vkandula650/user:v1
