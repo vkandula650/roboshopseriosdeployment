@@ -16,12 +16,12 @@ services:
   depends_on: 
    - redis
  catalogue:
-  image: vkandula650/catalogue:v1
+  image: vkandula650/catalogue
   container_name: catalogue
   depends_on: 
    - mongodb
  mongodb:
-  image: vkandula650/mongodb:v1
+  image: vkandula650/mangodb 
   container_name: mongodb
  Redis:
   image: redis:latest
