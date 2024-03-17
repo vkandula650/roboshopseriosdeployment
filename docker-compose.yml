@@ -11,6 +11,8 @@ services:
   depends_on:
    - catalogue
    - user
+   - mangodb
+   - cart
  user:
   image: vkandula650/user:v1
   container_name: user
@@ -24,3 +26,9 @@ services:
   container_name: mongodb
  Redis:
   image: redis:latest
+ cart:
+  image: vkandula650/cart:v1
+  container_name: cart
+  depends_on: 
+   - catalogue
+   - redis
