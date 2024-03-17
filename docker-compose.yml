@@ -37,7 +37,7 @@ services:
   image: vkandula650/mysql:v1
   container_name: mysql
  shipping:
-  image: vkandula650/shipping:v1
+  image: techworldwithsiva/shipping:k8
   container_name: shipping
   depends_on: 
    - Mysql
