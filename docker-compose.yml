@@ -13,6 +13,7 @@ services:
    - user
    - mongodb
    - cart
+   - shipping
  user:
   image: vkandula650/user:v1
   container_name: user
@@ -32,3 +33,11 @@ services:
   depends_on: 
    - catalogue
    - Redis
+  Mysql:
+   image: vkandula650/mysql:v1
+   container_name: mysql
+  shipping:
+   image: vkandula650/shipping:v1
+   container_name: shipping
+   depends_on: 
+    - mysql
