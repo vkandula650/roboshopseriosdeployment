@@ -31,4 +31,4 @@ services:
   container_name: cart
   depends_on: 
    - catalogue
-   - redis
+   - Redis
