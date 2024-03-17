@@ -1,6 +1,7 @@
 version: "3.8"
 networks:
- - roboshop
+   name: roboshop
+   external: true
 services:
  web:
   image: vkandula650/web:v1
