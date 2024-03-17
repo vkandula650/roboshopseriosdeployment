@@ -40,4 +40,4 @@ services:
   image: vkandula650/shipping:v1
   container_name: shipping
   depends_on: 
-   - mysql
+   - Mysql
