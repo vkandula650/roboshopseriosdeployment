@@ -14,8 +14,6 @@ services:
  user:
   image: vkandula650/user:v1
   container_name: user
-  depends_on: 
-   - redis
  catalogue:
   image: vkandula650/catalogue
   container_name: catalogue
