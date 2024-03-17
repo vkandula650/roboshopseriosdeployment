@@ -1,0 +1,27 @@
+version: "3.8"
+networks:
+ - roboshop
+services:
+ web:
+  image: vkandula650/web:v1
+  container_name: web
+  ports:
+    - "80:80"
+  depends_on:
+   - catalogue
+   - user
+ user:
+  image: vkandula650/user:v1
+  container_name: user
+  depends_on: 
+   - redis
+ catalogue:
+  image: vkandula650/catalogue:v1
+  container_name: catalogue
+  depends_on: 
+   - mongodb
+ mongodb:
+  image: vkandula650/mongodb:v1
+  container_name: mongodb
+ Redis:
+  image: redis:latest
