@@ -1,7 +1,7 @@
 version: "3.8"
 networks:
-   name: roboshop
-   external: true
+  roboshop:
+    driver: bridge
 services:
  web:
   image: vkandula650/web:v1
