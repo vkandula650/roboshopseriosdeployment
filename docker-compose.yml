@@ -52,7 +52,7 @@ services:
   image: vkandula650/mongodb:v1
   container_name: mongodb
   volumes:
-    - mongodb:/data/db
+   - mongodb:/data/db
  Redis:
   image: redis:latest
   volumes:
