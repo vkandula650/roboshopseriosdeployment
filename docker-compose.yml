@@ -53,4 +53,4 @@ services:
   image: vkandula650/ratings:v1
   container_name: ratings
   depends_on:
-   Mysql
+   - Mysql
