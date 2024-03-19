@@ -45,7 +45,12 @@ services:
   image: rabbitmq
   container_name: rabbitmq
  payment:
-  image: techworldwithsiva/payment:k8
+  image: vkandula650/payment:v1
   container_name: payment
   depends_on: 
    - rabbitmq
+ ratings:
+  image: vkandula650/ratings:v1
+  container_name: ratings
+  depends_on:
+   Mysql
