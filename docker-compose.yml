@@ -2,6 +2,32 @@ version: "3.8"
 networks:
   roboshop:
     driver: bridge
+volumes:
+# This is equivalent to docker volume create [volume-name]. these are named volumes
+  mysql:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/ec2-user/mysql
+  redis:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/ec2-user/redis
+  rabbitmq:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/ec2-user/rabbitmq
+  mongodb:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/ec2-user/mongodb
 services:
  web:
   image: vkandula650/web:v1
@@ -25,8 +51,12 @@ services:
  mongodb:
   image: vkandula650/mongodb:v1
   container_name: mongodb
+  volumes:
+    - mongodb:/data/db
  Redis:
   image: redis:latest
+  volumes:
+    - redis:/data
  cart:
   image: vkandula650/cart:v1
   container_name: cart
@@ -36,6 +66,8 @@ services:
  Mysql:
   image: vkandula650/mysql:v1
   container_name: mysql
+  volumes:
+    - mysql:/var/lib/mysql
  shipping:
   image: techworldwithsiva/shipping:k8
   container_name: shipping
@@ -44,6 +76,8 @@ services:
  rabbitmq:
   image: rabbitmq
   container_name: rabbitmq
+  volumes:
+    - rabbitmq:/var/lib/rabbitmq
  payment:
   image: vkandula650/payment:v1
   container_name: payment
